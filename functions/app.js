@@ -21,18 +21,18 @@ var app = express();
 app.use(cors())
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
-app.use('/users', usersRouter);
-app.use('/company', companiesRouter)
-app.use('/', indexRouter)
+app.use('/.netlify/functions/app/users', usersRouter);
+app.use('/.netlify/functions/app/company', companiesRouter)
+app.use('/.netlify/functions/app/', indexRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

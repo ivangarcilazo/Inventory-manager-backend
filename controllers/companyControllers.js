@@ -21,6 +21,7 @@ module.exports = {
             const doc = await newDocument.save()
             res.status(201).json({message:'Company loaded successfully'})
         } catch (error) {
+            res.status(500).json({message:'There was an unexpected error, try again.'})
             console.log(error)       
         }
     },
@@ -29,7 +30,7 @@ module.exports = {
             const documents = await companySchema.find()
             res.status(200).json(documents)
         } catch (error) {
-            res.status(500).json({message:'Error'})
+            res.status(500).json({message:'There was an unexpected error, try again.'})
             console.log(error)
         }
     },
@@ -43,7 +44,8 @@ module.exports = {
             }
             res.status(200).json(company)
         } catch (error) {
-            
+            res.status(500).json({message:'There was an unexpected error, try again.'})
+            console.error(error)
         }
     },
     deleteCompany: async(req, res, next)=>{
@@ -53,7 +55,7 @@ module.exports = {
             
             res.status(200).json(deleteDoc)
         } catch (error) {
-            res.status(500).json({message:'Error'})
+            res.status(500).json({message:'There was an unexpected error, try again.'})
             console.error(error)
         }
     },
@@ -65,7 +67,7 @@ module.exports = {
 
             res.status(200).json(upload)
         } catch (error) {
-            res.status(500).json({message:'Error'})
+            res.status(500).json({message:'There was an unexpected error, try again.'})
             console.error(error)
         }
     },
@@ -92,7 +94,7 @@ module.exports = {
             res.status(201).json({ updatedCompany });
         } catch (error) {
             console.log(error)
-            // res.status(500).json({message:'Server error'})
+            res.status(500).json({message:'There was an unexpected error, try again.'})
         }
     },
     updateProduct: async(req, res, next)=>{
@@ -117,6 +119,7 @@ module.exports = {
             res.status(200).json(newDoc)
         } catch (error) {
             console.log(error)
+            res.status(500).json({message:'There was an unexpected error, try again.'})
         }
     },
     deleteProduct: async( req, res, next ) => {
