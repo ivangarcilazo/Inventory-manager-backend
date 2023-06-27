@@ -6,7 +6,7 @@ router.post('/register', controllers.create)
 router.post('/login', controllers.login)
 
 router.get('/', (req,res)=>{
-    res.send('hol')
+    res.send('Users running...')
 })
 
 module.exports = router;

@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/.netlify/functions/app/users', usersRouter);
 app.use('/.netlify/functions/app/company', companiesRouter)
-app.use('/.netlify/functions/app/', indexRouter)
+app.use('/.netlify/functions/app', indexRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

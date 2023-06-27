@@ -20,7 +20,6 @@ module.exports={
             })
 
             const docSave = await document.save()
-
             res.status(201).json({message:'Success register user.'})
         } catch (error) {
             res.status(500).json({message:'There was an unexpected error, try again.'})
