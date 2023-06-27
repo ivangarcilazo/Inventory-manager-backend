@@ -57,6 +57,18 @@ module.exports = {
             console.error(error)
         }
     },
+    updatedCompany: async(req, res, next)=>{
+        try {
+            const { oldNIT } = req.body
+   
+            const upload = await companySchema.findOneAndUpdate({NIT:oldNIT}, req.body)
+
+            res.status(200).json(upload)
+        } catch (error) {
+            res.status(500).json({message:'Error'})
+            console.error(error)
+        }
+    },
     uploadProduct: async(req, res, next)=>{
         try {
             const { nit, name, quantity, price, description, image } = req.body;
