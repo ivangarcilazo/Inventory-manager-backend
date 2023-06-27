@@ -1,6 +1,8 @@
+require('dotenv').config()
 const mongoose = require('mongoose')
 
-mongoose.connect(`${env.process.ATLAS_CONNECT}`)
+
+mongoose.connect(`${process.env.ATLAS_CONNECT}`)
     .then((res)=>{
         console.log('Connected')
     }).catch((error)=>{
