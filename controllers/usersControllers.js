@@ -23,14 +23,13 @@ module.exports={
             res.status(201).json({message:'Success register user.'})
         } catch (error) {
             res.status(500).json({message:'There was an unexpected error, try again.'})
-            console.log(error)
         }
     },
     login:async(req, res, next)=>{
         try {
             const { email, password } = req.body
             const user = await usersSchema.findOne({email:email})
-            console.log(user)
+
             if(!user){
                 res.status(400).json({message:'This user doesn`t exist'})
             }else{
@@ -52,7 +51,6 @@ module.exports={
             }
         } catch (error) {
             res.status(500).json({message:'There was an unexpected error, try again.'})
-            console.log(error)
         }
     }
 }

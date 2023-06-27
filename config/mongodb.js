@@ -4,9 +4,8 @@ const mongoose = require('mongoose')
 
 mongoose.connect(`${process.env.ATLAS_CONNECT}`)
     .then((res)=>{
-        console.log('Connected')
     }).catch((error)=>{
-        console.log(error)
+        console.error(error)
     })
     
 module.exports = mongoose

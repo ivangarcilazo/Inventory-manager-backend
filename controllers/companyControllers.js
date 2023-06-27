@@ -22,7 +22,6 @@ module.exports = {
             res.status(201).json({message:'Company loaded successfully'})
         } catch (error) {
             res.status(500).json({message:'There was an unexpected error, try again.'})
-            console.log(error)       
         }
     },
     getAll:async(req, res, next)=>{
@@ -31,7 +30,6 @@ module.exports = {
             res.status(200).json(documents)
         } catch (error) {
             res.status(500).json({message:'There was an unexpected error, try again.'})
-            console.log(error)
         }
     },
     getByNIT:async(req, res, next)=>{
@@ -45,7 +43,6 @@ module.exports = {
             res.status(200).json(company)
         } catch (error) {
             res.status(500).json({message:'There was an unexpected error, try again.'})
-            console.error(error)
         }
     },
     deleteCompany: async(req, res, next)=>{
@@ -56,7 +53,6 @@ module.exports = {
             res.status(200).json(deleteDoc)
         } catch (error) {
             res.status(500).json({message:'There was an unexpected error, try again.'})
-            console.error(error)
         }
     },
     updatedCompany: async(req, res, next)=>{
@@ -68,7 +64,6 @@ module.exports = {
             res.status(200).json(upload)
         } catch (error) {
             res.status(500).json({message:'There was an unexpected error, try again.'})
-            console.error(error)
         }
     },
     uploadProduct: async(req, res, next)=>{
@@ -93,7 +88,6 @@ module.exports = {
     
             res.status(201).json({ updatedCompany });
         } catch (error) {
-            console.log(error)
             res.status(500).json({message:'There was an unexpected error, try again.'})
         }
     },
@@ -118,7 +112,6 @@ module.exports = {
               );
             res.status(200).json(newDoc)
         } catch (error) {
-            console.log(error)
             res.status(500).json({message:'There was an unexpected error, try again.'})
         }
     },
@@ -142,7 +135,6 @@ module.exports = {
          
         } catch (error) {
             res.status(500).json({message:'There was an unexpected error, try again.'})
-            console.log(error)
         }
     }
 }
