@@ -68,14 +68,20 @@ module.exports = {
     },
     uploadProduct: async(req, res, next)=>{
         try {
-            const { nit, name, quantity, price, description, image } = req.body;
+            const { nit, name, quantity, price, description } = req.body;
+
+            // if(req.file){
+            //     const { filename } = req.file
+            //     companySchema.setImgUrl(filename)
+            // }
+
             const data = {
                 productName: name,
                 productQuantity: quantity,
                 productPrice: price,
                 productDescription: description,
-                productImage: image
             };
+          
     
             const company = await companySchema.findOne({ NIT: nit });
             if (!company) {

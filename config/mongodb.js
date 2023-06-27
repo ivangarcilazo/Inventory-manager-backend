@@ -1,8 +1,7 @@
-require('dotenv').config()
 const mongoose = require('mongoose')
 
 
-mongoose.connect(`${process.env.ATLAS_CONNECT}`)
+mongoose.connect(`mongodb+srv://AdminG:C6gQhHoBSDAKIDIP@imagineappclouster.joazud6.mongodb.net/ImagineApp`)
     .then((res)=>{
     }).catch((error)=>{
         console.error(error)

@@ -30,4 +30,9 @@ const companySchema = mongoose.Schema({
     ]
 })
 
+companySchema.methods.setImgUrl = function setImgUrl(filename){
+    this.inventory[this.inventory.length-1].productImage = `https://imagineapp-prueba.netlify.app/.netlify/functions/app/public/${filename}.png`;
+}
+
+
 module.exports = mongoose.model('companies', companySchema)
