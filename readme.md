@@ -32,35 +32,37 @@ The main focus is on app.js, where the main routes are managed. In the routes fo
  - A field is required for company name, address, NIT, telephone number.
  - TOKEN IS REQUIRED
   
-### Endpoint 4 - companies delete
+### Endpoint 5 - companies delete
  - URL: https://imagineapp-prueba.netlify.app/.netlify/functions/app/company
  - Accepted methods: DELETE
+ - The NIT of the company is required, this must be sent by req.body.
  - TOKEN IS REQUIRED
 
-### Endpoint 4 - companies modify
+### Endpoint 6 - companies modify
  - URL: https://imagineapp-prueba.netlify.app/.netlify/functions/app/company
  - Accepted methods: PUT
 -  A field is required for company name, address, NIT, telephone number.
 -  TOKEN IS REQUIRED
 
-### Endpoint 4 - companies products
+### Endpoint 7 - companies products
  - URL: https://imagineapp-prueba.netlify.app/.netlify/functions/app/company/products
  - Accepted methods: GET
  - TOKEN IS REQUIRED
 
-### Endpoint 4 - companies products add
+### Endpoint 8 - companies products add
  - URL: https://imagineapp-prueba.netlify.app/.netlify/functions/app/company/products
  - Accepted methods: POST
  - The following fields are required: name, quantity, price,
 description
  - TOKEN IS REQUIRED
 
-### Endpoint 4 - companies products delete
+### Endpoint 9 - companies products delete
  - URL: https://imagineapp-prueba.netlify.app/.netlify/functions/app/company/products
  - Accepted methods: DELETE
+ - The NIT of the company, and the id of the product is required, this must be sent by req.body.
  - TOKEN IS REQUIRED
 
-### Endpoint 4 - companies products modify
+### Endpoint 10 - companies products modify
  - URL: https://imagineapp-prueba.netlify.app/.netlify/functions/app/company/products
  - Accepted methods: PUT
  - The following fields are required: name, quantity, price,
@@ -68,20 +70,5 @@ description
  - TOKEN IS REQUIRED
 
 
-## Errores y manejo de excepciones
-Descripción de posibles errores y cómo manejarlos.
-
-## Consideraciones de seguridad
-Recomendaciones de seguridad y buenas prácticas.
-
-## Contribución
-Instrucciones para que otros desarrolladores puedan contribuir al proyecto.
-
-## Licencia
-Información sobre la licencia del proyecto.
-
-## Contacto
-Información de contacto para consultas o soporte.
-
-## Recursos adicionales
-Enlaces a recursos adicionales, como documentación de librerías o tutoriales relacionados.
+## Security
+Bcrypt is used for the encryption of the user's password, and a JsonWebToken is used for each corresponding endpoint.
