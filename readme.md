@@ -1,4 +1,4 @@
-# Backend documentation with Node.js/Expres
+# Backend documentation with Node.js/Express
 
 ## Introduction
 This is the backend of the Inventory Manager application. It is in charge of handling the requests to the different routes and error handling.
